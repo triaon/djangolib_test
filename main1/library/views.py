@@ -7,7 +7,6 @@ from .models import Library, Book
 class LibraryViewSet(viewsets.ModelViewSet):
     queryset = Library.objects.all()
     serializer_class = LibrarySerializer
-
     @action(detail=True, methods=['get'])
     def books(self, request, pk=None):
         library = self.get_object()
